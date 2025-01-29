@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the custom path for the Python script
-PYTHON_SCRIPT_PATH="/opt/my_python_script.py"
+PYTHON_SCRIPT_PATH="/opt/install-injection-py/install-injection.py"
 
 # Ensure the script runs as root
 if [[ $EUID -ne 0 ]]; then
