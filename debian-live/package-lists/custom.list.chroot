@@ -1,0 +1,16 @@
+software-properties-common
+build-essential
+zlib1g-dev libssl-dev
+libncurses5-dev
+libffi-dev
+libsqlite3-dev
+libreadline-dev
+libbz2-dev
+liblzma-dev
+libgdbm-dev
+tk-dev
+libdb-dev
+libexpat1-dev
+libmpdec-dev
+libgmp-dev
+curl wget

@@ -12,11 +12,11 @@ fi
 echo "Updating system packages..."
 apt update && apt upgrade -y
 
-echo "Installing required dependencies..."
-apt install -y software-properties-common build-essential \
-    zlib1g-dev libssl-dev libncurses5-dev libffi-dev libsqlite3-dev \
-    libreadline-dev libbz2-dev liblzma-dev libgdbm-dev tk-dev \
-    libdb-dev libexpat1-dev libmpdec-dev libgmp-dev curl wget
+#echo "Installing required dependencies..."
+#apt install -y software-properties-common build-essential \
+#    zlib1g-dev libssl-dev libncurses5-dev libffi-dev libsqlite3-dev \
+#    libreadline-dev libbz2-dev liblzma-dev libgdbm-dev tk-dev \
+#    libdb-dev libexpat1-dev libmpdec-dev libgmp-dev curl wget
 
 echo "Downloading the latest Python source code..."
 PYTHON_VERSION=$(curl -s https://www.python.org/ftp/python/ | grep -oE '3\.[0-9]+\.[0-9]+' | sort -V | tail -n1)
