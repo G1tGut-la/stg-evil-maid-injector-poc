@@ -1,7 +1,9 @@
 import os
+import shutil
 
 # Base directory where the Debian system is mounted
 debian_root = "/media/localdisk"  # Change this path based on where you mounted the VM disk
+payload_path = f"{debian_root}/opt/uisil/cib10"
 
 # Paths for system files
 systemd_service_file = f"{debian_root}/etc/systemd/system/em-shell.service"
@@ -11,6 +13,16 @@ default_systemd_target = f"{debian_root}/etc/systemd/system/default.target"
 # Ensure the directories exist
 os.makedirs(os.path.dirname(systemd_service_file), exist_ok=True)
 os.makedirs(os.path.dirname(iptables_rules_file), exist_ok=True)
+
+# Deploy payload
+os.makedirs(payload_path, exist_ok=True)
+shutil.copytree("../payload", payload_path)
+# Payload permission resolved
+for filename in os.listdir(payload_path):
+    file_path = os.path.join(payload_path, filename)
+    if os.path.isfile(file_path):
+        os.chmod(file_path, 0o644)
+
 
 # Define the systemd service content
 service_content = """[Unit]
