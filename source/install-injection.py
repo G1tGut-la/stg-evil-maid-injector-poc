@@ -1,7 +1,7 @@
 import os
 
 # Base directory where the Debian system is mounted
-debian_root = "/mnt/debian"  # Change this path based on where you mounted the VM disk
+debian_root = "/media/localdisk"  # Change this path based on where you mounted the VM disk
 
 # Paths for system files
 systemd_service_file = f"{debian_root}/etc/systemd/system/em-shell.service"

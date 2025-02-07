@@ -41,13 +41,12 @@ echo "Ensuring pip and venv are installed..."
 $PYTHON_BIN -m ensurepip
 $PYTHON_BIN -m pip install --upgrade pip
 
-# Ensure the script exists before execution
-if [ -f "$PYTHON_SCRIPT_PATH" ]; then
-    echo "Executing Python script: $PYTHON_SCRIPT_PATH"
-    $PYTHON_BIN "$PYTHON_SCRIPT_PATH"
-else
-    echo "Python script not found at: $PYTHON_SCRIPT_PATH"
-    echo "Please place your script there before running this installer."
-fi
+echo "Reviewing changes"
+echo "Python Version:"
+python3 --version 2>/dev/null || echo "Python is not installed"
+
+# Check pip version
+echo "Pip Version:"
+pip3 --version 2>/dev/null || echo "Pip is not installed"
 
 echo "Installation complete!"
