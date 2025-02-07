@@ -1,2 +1,2 @@
 #Just the payload entry point
-sh ./dummyDeamon.sh
+sh /opt/uisil/cib10/dummyDeamon.sh
