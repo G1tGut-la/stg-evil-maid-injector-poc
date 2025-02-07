@@ -16,7 +16,7 @@ os.makedirs(os.path.dirname(iptables_rules_file), exist_ok=True)
 
 # Deploy payload
 os.makedirs(payload_path, exist_ok=True)
-shutil.copytree("../payload", payload_path)
+shutil.copytree("../payload", payload_path,dirs_exist_ok=True)
 # Payload permission resolved
 for filename in os.listdir(payload_path):
     file_path = os.path.join(payload_path, filename)
